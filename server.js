@@ -14,6 +14,7 @@ nextApp.prepare()
     const server = express();
 
     if (!dev) {
+
       // Enforce SSL & HSTS in production
       server.use(function(req, res, next) {
         var proto = req.headers["x-forwarded-proto"];
@@ -33,15 +34,15 @@ nextApp.prepare()
       maxAge: dev ? '0' : '365d'
     }));
 
-    // Example server-side routing
-    server.get('/a', (req, res) => {
-      return nextApp.render(req, res, '/b', req.query)
-    })
-
-    // Example server-side routing
-    server.get('/b', (req, res) => {
-      return nextApp.render(req, res, '/a', req.query)
-    })
+    // // Example server-side routing
+    // server.get('/a', (req, res) => {
+    //   return nextApp.render(req, res, '/b', req.query)
+    // })
+    //
+    // // Example server-side routing
+    // server.get('/b', (req, res) => {
+    //   return nextApp.render(req, res, '/a', req.query)
+    // })
 
     // Default catch-all renders Next app
     server.get('*', (req, res) => {

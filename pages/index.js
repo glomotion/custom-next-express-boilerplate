@@ -1,14 +1,22 @@
-import React from 'react'
-import Link from 'next/link'
+import React, { Component } from "react";
+import { connect } from "react-redux";
 
 import styles from "../styles.scss";
 
-export default () => (
-  <div className={styles.example}>
-    <h1>Hello World!</h1>
-    <ul>
-      <li><Link href="/b"><a>a</a></Link></li>
-      <li><Link href="/a"><a>b</a></Link></li>
-    </ul>
-  </div>
-)
+class Page extends Component {
+  static getInitialProps({ store, isServer, pathname, query }) {
+    store.dispatch({ type: 'FOO', payload: 'foo' }); // component will be able to read from store's state when rendered
+    return { custom: 'custom' }; // you can pass some custom props to component from here
+  }
+  
+  render() {
+    return (
+      <div className={styles.example}>
+        <div>Prop from Redux {this.props.foo}</div>
+        <div>Prop from getInitialProps {this.props.custom}</div>
+      </div>
+    )
+  }
+}
+
+export default connect()(Page);
