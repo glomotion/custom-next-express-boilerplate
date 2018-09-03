@@ -1,0 +1,21 @@
+{
+  "name": "nextjs-custom-server-express",
+  "version": "0.0.1",
+  "description": "Deploy Next.js server-side React apps using a custom Express server",
+  "scripts": {
+    "dev": "node server.js -p $PORT",
+    "build": "next build",
+    "start": "node server.js -p $PORT"
+  },
+  "dependencies": {
+    "@zeit/next-sass": "^0.2.0",
+    "express": "^4.14.0",
+    "next": "^6.1.1",
+    "node-sass": "^4.9.3",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "engines": {
+    "node": "6.11.x"
+  }
+}
