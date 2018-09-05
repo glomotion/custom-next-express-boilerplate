@@ -8,7 +8,7 @@ class Page extends Component {
     store.dispatch({ type: 'FOO', payload: 'foo' }); // component will be able to read from store's state when rendered
     return { custom: 'custom' }; // you can pass some custom props to component from here
   }
-  
+
   render() {
     return (
       <div className={styles.example}>

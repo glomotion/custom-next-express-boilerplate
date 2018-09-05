@@ -1,2 +1,4 @@
 /node_modules
 /.next
+/moo-cow
+.DS_Store
