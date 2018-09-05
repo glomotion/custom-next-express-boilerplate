@@ -10,7 +10,6 @@ export default ({ lastUpdate, light }) => {
           font: 50px menlo, monaco, monospace;
           background-color: #000;
         }
-
         .light {
           background-color: #999;
         }
